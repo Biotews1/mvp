@@ -1,0 +1,100 @@
+/* Estilos Generales y Personalizaciones Adicionales a Tailwind */
+body {
+    font-family: 'Inter', sans-serif; /* Asegura que Inter se aplique globalmente */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mejoras visuales para elementos específicos */
+.btn-primary {
+    @apply bg-blue-600 text-white font-semibold py-2 px-4 rounded-md shadow-md hover:bg-blue-700 transition duration-150;
+}
+
+.btn-secondary {
+    @apply bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-md shadow-md hover:bg-gray-300 transition duration-150;
+}
+
+.btn-whatsapp {
+    @apply bg-green-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-green-600 transition duration-150 flex items-center;
+}
+
+/* Estilo para perfil destacado en resultados */
+.perfil-destacado {
+    @apply border-4 border-yellow-400 shadow-xl relative;
+}
+
+.perfil-destacado::before {
+    content: "DESTACADO";
+    @apply absolute top-0 right-0 bg-yellow-400 text-gray-900 text-xs font-bold px-2 py-1 rounded-bl-lg;
+    z-index: 10;
+}
+
+/* Estilos para el modal de WhatsApp */
+#whatsAppModal {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#whatsAppModal.active #whatsAppModalContent {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Estilos para los mensajes del chat simulado */
+.chat-message {
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.chat-message.user {
+    background-color: #3B82F6; /* bg-blue-600 */
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.chat-message.assistant {
+    background-color: #E5E7EB; /* bg-gray-200 */
+    color: #1F2937; /* text-gray-800 */
+    margin-right: auto;
+    border-bottom-left-radius: 0.25rem;
+}
+
+/* Animación sutil para carga de elementos */
+.fade-in {
+    animation: fadeInAnimation 0.5s ease-in-out;
+}
+
+@keyframes fadeInAnimation {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos para estrellas de valoración */
+.star-rating span {
+    color: #FFD700; /* Color dorado para estrellas */
+    font-size: 1.25rem; /* Tamaño de las estrellas */
+    margin-right: 0.1rem;
+}
+.star-rating span.empty {
+    color: #D1D5DB; /* Color gris para estrellas vacías */
+}
+
+/* Placeholder para mapa */
+.map-placeholder {
+    @apply bg-gray-300 rounded-md flex items-center justify-center text-gray-500;
+    min-height: 200px; /* Asegura una altura mínima */
+}
+
+/* Ajustes responsivos adicionales si son necesarios */
+@media (max-width: 768px) {
+    nav div a {
+        /* Ejemplo: Hacer los links del nav más pequeños o apilarlos */
+        /* padding: 0.5rem 0.75rem; 
+           font-size: 0.875rem; */
+    }
+    .hero-section h1 { /* Ajustar el tamaño del título en móviles */
+        font-size: 2.5rem; /* Equivalente a text-4xl, puede ser más pequeño */
+    }
+}

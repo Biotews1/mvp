@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Profesionales - Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .modal { display: none; } /* Initially hidden */
+        .modal.active { display: flex; } /* Shown when active */
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">ProAsesores</a>
+            <div>
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Inicio</a>
+                <a href="registro-profesional.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Soy Profesional</a>
+                <a href="registro-usuario.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Registrarse</a>
+                <a href="#" id="loginButton" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 text-sm font-medium">Iniciar Sesión</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="bg-blue-600 text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold mb-4">Encuentra al experto que tu negocio necesita</h1>
+            <p class="text-lg mb-8">Conectamos empresas con contadores, abogados y economistas de primer nivel.</p>
+            
+            <form id="searchForm" class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-xl">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label for="especialidad" class="block text-sm font-medium text-gray-700 mb-1">Especialidad:</label>
+                        <select id="especialidad" name="especialidad" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-gray-700">
+                            <option value="">Todas</option>
+                            <option value="Contador">Contador</option>
+                            <option value="Abogado">Abogado</option>
+                            <option value="Economista">Economista</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="palabraClave" class="block text-sm font-medium text-gray-700 mb-1">Describe tu necesidad:</label>
+                        <input type="text" id="palabraClave" name="palabraClave" placeholder="Ej: 'impuestos pymes', 'contrato laboral', 'inversión extranjera'" class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-gray-700">
+                    </div>
+                </div>
+                <button type="submit" class="mt-6 w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-3 px-4 rounded-md shadow-md transition duration-150">
+                    Buscar Asesor
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">¿Cómo funciona?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 mx-auto">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">1. Busca</h3>
+                    <p class="text-gray-600">Utiliza nuestro buscador inteligente para describir tu necesidad y encontrar profesionales por especialidad.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 mx-auto">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068M15.75 21A9 9 0 1 0 4.25 12H15" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">2. Compara</h3>
+                    <p class="text-gray-600">Revisa perfiles detallados, experiencia, servicios y valoraciones de otros usuarios.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 mx-auto">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-6.75 3h9m-9 3H12<span></span>M3 3h18M3 12h18m-3-9v18M3 9v18" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">3. Conecta</h3>
+                    <p class="text-gray-600">Contacta directamente al profesional que mejor se adapte a tus requerimientos y comienza a trabajar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-200 py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">¿Necesitas ayuda para definir tu consulta?</h2>
+            <p class="text-lg text-gray-700 mb-8">Nuestro asistente virtual te guiará con unas simples preguntas.</p>
+            <button id="openWhatsAppModal" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-150 flex items-center mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-6.75 3h9m-9 3H12M3 20.25h18M3 3.75h18M3 12h18m-3-9v18M3 9v18" />
+                </svg>
+                Asesoría Inmediata / Perfilar mi Necesidad
+            </button>
+        </div>
+    </section>
+
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Profesionales Destacados</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-yellow-400">
+                    <img src="https://placehold.co/300x200/EBF4FF/3B82F6?text=Profesional+Destacado+1" alt="Profesional Destacado 1" class="w-full h-40 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Nombre Profesional (Destacado)</h3>
+                    <p class="text-blue-600 font-medium mb-1">Especialidad</p>
+                    <p class="text-gray-600 text-sm mb-3 truncate">Breve descripción del profesional y sus servicios principales...</p>
+                    <a href="#" class="text-blue-600 hover:underline font-medium">Ver Perfil</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                     <img src="https://placehold.co/300x200/EBF4FF/3B82F6?text=Profesional+2" alt="Profesional 2" class="w-full h-40 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Nombre Profesional</h3>
+                    <p class="text-blue-600 font-medium mb-1">Especialidad</p>
+                    <p class="text-gray-600 text-sm mb-3 truncate">Breve descripción del profesional y sus servicios principales...</p>
+                    <a href="#" class="text-blue-600 hover:underline font-medium">Ver Perfil</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://placehold.co/300x200/EBF4FF/3B82F6?text=Profesional+3" alt="Profesional 3" class="w-full h-40 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Nombre Profesional</h3>
+                    <p class="text-blue-600 font-medium mb-1">Especialidad</p>
+                    <p class="text-gray-600 text-sm mb-3 truncate">Breve descripción del profesional y sus servicios principales...</p>
+                    <a href="#" class="text-blue-600 hover:underline font-medium">Ver Perfil</a>
+                </div>
+            </div>
+             <div class="text-center mt-8">
+                <a href="resultados.html" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md shadow-md transition duration-150">
+                    Ver todos los profesionales
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="py-8 container mx-auto px-6">
+        <div class="bg-gray-200 p-4 rounded-lg text-center">
+            <img src="https://placehold.co/800x100/CCCCCC/757575?text=Espacio+Publicitario" alt="Banner Publicitario" class="mx-auto rounded-md">
+        </div>
+    </section>
+
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 ProAsesores. Todos los derechos reservados.</p>
+            <p class="text-sm">Una plataforma para conectar con expertos.</p>
+        </div>
+    </footer>
+
+    <div id="whatsAppModal" class="modal fixed inset-0 bg-gray-900 bg-opacity-75 items-center justify-center p-4 z-50">
+        <div class="bg-white p-8 rounded-lg shadow-xl max-w-lg w-full transform transition-all scale-95 opacity-0" id="whatsAppModalContent">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold text-gray-800">Asistente Virtual ProAsesores</h3>
+                <button id="closeWhatsAppModal" class="text-gray-500 hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="chatContainer" class="space-y-4 h-64 overflow-y-auto mb-6 p-4 bg-gray-50 rounded-md">
+                </div>
+
+            <div id="questionSection">
+                </div>
+            
+            <div id="conclusionSection" class="hidden mt-6 text-center">
+                <p class="text-lg text-gray-700 mb-4">¡Gracias por tus respuestas!</p>
+                <p class="text-gray-600 mb-2">Basado en tu información, te recomendamos buscar un profesional especializado en <strong id="sugerenciaEspecialidad">[especialidad sugerida]</strong>.</p>
+                <p class="text-gray-600 mb-6">Puedes usar estos términos en nuestro buscador principal para encontrar al experto ideal.</p>
+                <button id="goToSearchButton" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-md shadow-md transition duration-150">
+                    Ir al Buscador
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>

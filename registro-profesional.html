@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Profesional - ProAsesores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">ProAsesores</a>
+            <div>
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Inicio</a>
+                <a href="registro-usuario.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Soy Usuario</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-xl">
+            <h1 class="text-3xl font-bold text-center mb-8">Únete como Profesional</h1>
+            <p class="text-gray-600 text-center mb-8">Completa el formulario para ofrecer tus servicios en nuestra plataforma.</p>
+            
+            <form id="registroProfesionalForm">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="nombreCompleto" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
+                        <input type="text" name="nombreCompleto" id="nombreCompleto" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+                        <input type="email" name="email" id="email" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label for="especialidadProfesional" class="block text-sm font-medium text-gray-700">Especialidad Principal</label>
+                    <select id="especialidadProfesional" name="especialidadProfesional" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                        <option value="">Selecciona tu especialidad</option>
+                        <option value="Contador">Contador</option>
+                        <option value="Abogado">Abogado</option>
+                        <option value="Economista">Economista</option>
+                        <option value="Otro">Otro (especificar)</option>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label for="tituloProfesional" class="block text-sm font-medium text-gray-700">Título Profesional / Cargo</label>
+                    <input type="text" name="tituloProfesional" id="tituloProfesional" placeholder="Ej: Contador Público, Abogado Laboralista" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                </div>
+
+                <div class="mb-6">
+                    <label for="descripcionCorta" class="block text-sm font-medium text-gray-700">Breve Descripción de tu Perfil (Max 200 caracteres)</label>
+                    <textarea name="descripcionCorta" id="descripcionCorta" rows="3" maxlength="200" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required></textarea>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="serviciosOfrecidos" class="block text-sm font-medium text-gray-700">Servicios Ofrecidos (separados por comas)</label>
+                    <input type="text" name="serviciosOfrecidos" id="serviciosOfrecidos" placeholder="Ej: Asesoría fiscal, Contratos, Análisis de mercado" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <div class="mb-6">
+                    <label for="fotoPerfil" class="block text-sm font-medium text-gray-700">Foto de Perfil (URL)</label>
+                    <input type="url" name="fotoPerfil" id="fotoPerfil" placeholder="https://ejemplo.com/foto.jpg" class="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                     <p class="text-xs text-gray-500 mt-1">Para este prototipo, puedes usar un enlace a una imagen de https://placehold.co</p>
+                </div>
+
+                <div class="mt-8">
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-md shadow-md transition duration-150">
+                        Registrarme como Profesional (UI)
+                    </button>
+                </div>
+                <p class="text-xs text-gray-500 mt-4 text-center">Nota: Este es un formulario de UI. El envío de datos no está implementado en este prototipo.</p>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 ProAsesores. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>
